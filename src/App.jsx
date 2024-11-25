@@ -9,6 +9,9 @@ import { useState } from "react";
 
 export default function App() {
   const [user, setUser] = useState([]);
+  const [title, setTitle] = useState(undefined);
+  const [price, setPrice] = useState(undefined);
+  const [image, setImage] = useState(undefined);
 
   const router = createBrowserRouter([
     {
@@ -21,7 +24,16 @@ export default function App() {
         },
         {
           path: "shoes",
-          element: <Shoes />,
+          element: (
+            <Shoes
+              title={title}
+              setTitle={setTitle}
+              price={price}
+              setPrice={setPrice}
+              image={image}
+              setImage={setImage}
+            />
+          ),
         },
         {
           path: "shoes/add",

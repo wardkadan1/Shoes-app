@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import "./layout.css";
 
 export default function Layout({ user }) {
+  user.type = "admin";
   return (
     <div>
       <header>

@@ -49,7 +49,6 @@ export default function Login({ setUser }) {
           <button className="btn" type="submit">
             Login
           </button>
-          <p className="error">sad</p>
         </section>
       </form>
       <p className="error">{error}</p>

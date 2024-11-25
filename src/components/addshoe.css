@@ -3,7 +3,7 @@
   margin: 0;
 }
 
-.loginpage {
+.addshoe {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,12 +11,12 @@
   height: 100%;
 }
 
-.loginpage p {
+.addshoe p {
   margin-top: 1vh;
   color: rgb(151, 32, 32);
   font-size: 25px;
 }
-.container {
+.containerA {
   width: 400px;
   height: 400px;
   background-color: #111312;
@@ -24,7 +24,7 @@
   border-radius: 10px;
 }
 
-.box {
+.boxA {
   margin-top: 10%;
   width: 80%;
   height: 80%;
@@ -34,7 +34,7 @@
   margin-left: 10%;
 }
 
-.btn {
+.btnA {
   background-color: #1e2220;
   color: rgb(255, 255, 255);
   font-size: 20px;
@@ -46,7 +46,7 @@
   cursor: pointer;
 }
 
-.btn:hover {
+.btnA:hover {
   color: rgb(0, 0, 0);
   background-color: wheat;
 }
@@ -56,6 +56,6 @@ label {
   font-size: 20px;
 }
 
-label .email {
+label .title {
   margin-top: 20px;
 }

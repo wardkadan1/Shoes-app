@@ -7,8 +7,8 @@
 .boxD {
   display: grid;
   align-items: center;
-  width: 70%;
-  height: 70%;
+  width: 55vw;
+  height: 55vh;
   background-color: #111312;
   box-shadow: wheat 0px 0px 18px 0px;
   border-radius: 10px;
@@ -20,11 +20,12 @@
   grid-area: imageA;
   display: flex;
   justify-content: center;
+  margin-right: 50px;
 }
 
 .imageD img {
-  max-width: 450px;
-  max-height: 450px;
+  max-width: 320px;
+  max-height: 320px;
   border-radius: 15px;
 }
 

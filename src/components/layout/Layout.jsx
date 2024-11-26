@@ -8,7 +8,7 @@ export default function Layout({ user, setUser }) {
   const handleLogout = (e) => {
     e.preventDefault();
     setUser([]);
-    navigate("/");
+    navigate("/", { replace: true });
   };
   return (
     <div className="page-container">

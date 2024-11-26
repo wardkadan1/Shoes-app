@@ -1,13 +1,27 @@
-import { getshoes } from "../fetch/fetch";
+import { deleteShoes, getshoes } from "../fetch/fetch";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./shoes.css";
 
 export default function Shoes() {
   const [shoes, setShoes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getshoes(setShoes);
   }, []);
+
+  const Delete = async (e) => {
+    try {
+      await deleteShoes(e.target.name);
+      setShoes((prevShoes) =>
+        prevShoes.filter((shoe) => shoe.id !== e.target.name)
+      );
+      navigate("/shoes");
+    } catch (error) {
+      console.error("Error adding shoe:", error);
+    }
+  };
 
   return (
     <div className="containerS">
@@ -23,7 +37,9 @@ export default function Shoes() {
             </section>
             <section className="btnsec">
               <button>View Details</button>
-              <button className="downBtn">Delete</button>
+              <button name={shoe.id} className="downBtn" onClick={Delete}>
+                Delete
+              </button>
             </section>
           </section>
         ))}

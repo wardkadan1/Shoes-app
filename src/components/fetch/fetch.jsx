@@ -32,3 +32,18 @@ export function getshoes(setShoes) {
       setShoes([]);
     });
 }
+
+export function deleteShoes(shoesid) {
+  return fetch(`https://6743a37eb7464b1c2a656fde.mockapi.io/shoes/${shoesid}`, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(`Shoe with id ${shoesid} deleted successfully.`, data);
+    })
+    .catch((error) => {
+      console.error("Error deleting shoe:", error);
+    });
+}

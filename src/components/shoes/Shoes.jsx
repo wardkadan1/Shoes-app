@@ -14,13 +14,17 @@ export default function Shoes() {
       {shoes.length > 0 &&
         shoes.map((shoe) => (
           <section className="boxS" key={shoe.id}>
-            <img src={shoe.image} alt="" />
+            <section className="imagesec">
+              <img src={shoe.image} alt="" />
+            </section>
             <section className="labelC">
               <label htmlFor="">{shoe.title} </label>
               <label htmlFor="">{shoe.price}$</label>
             </section>
-            <button>View Details</button>
-            <button className="downBtn">Delete</button>
+            <section className="btnsec">
+              <button>View Details</button>
+              <button className="downBtn">Delete</button>
+            </section>
           </section>
         ))}
     </div>

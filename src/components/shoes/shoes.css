@@ -7,14 +7,25 @@
 }
 
 .boxS {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
-  width: 250px;
-  height: 305px;
+  width: 270px;
+  height: 370px;
   background-color: #111312;
   box-shadow: wheat 0px 0px 18px 0px;
   border-radius: 10px;
+  grid-template-rows: 47% 31% 22%;
+  grid-template-areas: "imageA" "labelA" "btnA";
+}
+
+.imagesec {
+  grid-area: imageA;
+  display: flex;
+  justify-content: center;
+}
+
+.btnsec {
+  grid-area: btnA;
 }
 
 .boxS img {
@@ -25,8 +36,9 @@
 }
 
 .labelC {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  grid-area: labelA;
+  padding: 8px;
+  font-size: 17px;
   display: flex;
   flex-direction: column;
   text-align: center;

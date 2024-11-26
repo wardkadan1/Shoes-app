@@ -1,0 +1,26 @@
+.home-header {
+  display: flex;
+  justify-content: center;
+}
+
+.home-box {
+  margin-top: 10%;
+  width: 60%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #111312;
+  box-shadow: wheat 0px 17px 60px 11px;
+  border-radius: 10px;
+  color: wheat;
+}
+
+.home-box h1 {
+  font-size: 55px;
+}
+
+.home-box p {
+  font-size: 30px;
+}

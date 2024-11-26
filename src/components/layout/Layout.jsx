@@ -2,7 +2,11 @@
 import { Link, Outlet } from "react-router-dom";
 import "./layout.css";
 
-export default function Layout({ user }) {
+export default function Layout({ user, setUser }) {
+  const handleLogout = (e) => {
+    e.preventDefault();
+    setUser([]);
+  };
   return (
     <div className="page-container">
       <header>
@@ -11,9 +15,12 @@ export default function Layout({ user }) {
           {user.type === "admin" && (
             <Link to="/shoes/add"> | Add Shoe</Link>
           )}{" "}
-          {(user[0] && <Link to="/"> | Logout</Link>) || (
-            <Link to="/login"> | Login</Link>
-          )}
+          {(Object.keys(user).length > 0 && (
+            <Link to="/" onClick={handleLogout}>
+              {" "}
+              | Logout
+            </Link>
+          )) || <Link to="/login"> | Login</Link>}
         </nav>
       </header>
       <main>

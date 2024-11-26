@@ -16,7 +16,7 @@ export default function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout user={user} />,
+      element: <Layout user={user} setUser={setUser} />,
       children: [
         {
           index: true,

@@ -8,8 +8,12 @@ html,
 body {
   height: 100%;
   background-color: #1e2220;
+}
+
+.page-container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -17,8 +21,8 @@ header {
   background-color: #111312;
   width: 100vw;
   height: 60px;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -30,6 +34,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: auto;
 }
 
 nav a {
@@ -37,12 +42,9 @@ nav a {
   font-size: 25px;
   color: wheat;
 }
-main {
-  background-color: #1e2220;
-  height: calc(100vh - 60px -60px);
-}
 
 .mainSec {
+  background-color: #1e2220;
   width: 80%;
   margin-left: 10%;
 }

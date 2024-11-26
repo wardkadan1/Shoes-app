@@ -3,9 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import "./layout.css";
 
 export default function Layout({ user }) {
-  user.type = "admin";
   return (
-    <div>
+    <div className="page-container">
       <header>
         <nav>
           <Link to="/">Home</Link> <Link to="/shoes"> | Shoes</Link>

@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./components/layout/Layout";
 import Home from "./components/Home";
-import Shoes from "./components/Shoes";
-import AddShoe from "./components/AddShoe";
+import Shoes from "./components/shoes/Shoes";
+import AddShoe from "./components/addshoe/AddShoe";
 import ShoeDetails from "./components/ShoeDetails";
-import Login from "./components/Login";
+import Login from "./components/login/Login";
 import { useState } from "react";
 
 export default function App() {
@@ -24,8 +24,12 @@ export default function App() {
         },
         {
           path: "shoes",
+          element: <Shoes />,
+        },
+        {
+          path: "shoes/add",
           element: (
-            <Shoes
+            <AddShoe
               title={title}
               setTitle={setTitle}
               price={price}
@@ -34,10 +38,6 @@ export default function App() {
               setImage={setImage}
             />
           ),
-        },
-        {
-          path: "shoes/add",
-          element: <AddShoe />,
         },
         {
           path: "shoes/:shoeId",

@@ -22,6 +22,9 @@ export default function Layout({ user }) {
           <Outlet />
         </section>
       </main>
+      <footer>
+        <p>&copy; 2024 Shoe Store. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

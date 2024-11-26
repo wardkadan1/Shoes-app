@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
+import { addShoes } from "../fetch/fetch";
 import "./addshoe.css";
-import { addShoes } from "./fetch";
 
 export default function AddShoe({
   title,
@@ -15,8 +15,12 @@ export default function AddShoe({
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    addShoes(title, price, image);
-    navigate("/shoes");
+    try {
+      await addShoes(title, price, image);
+      navigate("/shoes");
+    } catch (error) {
+      console.error("Error adding shoe:", error);
+    }
   };
 
   return (

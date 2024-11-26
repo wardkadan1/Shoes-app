@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { emailApass } from "./fetch";
+import { emailApass } from "../fetch/fetch";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 

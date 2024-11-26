@@ -47,3 +47,36 @@ export function deleteShoes(shoesid) {
       console.error("Error deleting shoe:", error);
     });
 }
+
+export function getshoesbyid(id) {
+  return fetch(`https://6743a37eb7464b1c2a656fde.mockapi.io/shoes/${id}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Fetched data:", data);
+      return data;
+    })
+    .catch((error) => {
+      console.error("Error fetching shoes:", error);
+      throw error;
+    });
+}
+
+export function updateShoe(title, price, image, id) {
+  return fetch(`https://6743a37eb7464b1c2a656fde.mockapi.io/shoes/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title, price, image }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to update shoe with id ${id}`);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      console.error("Error adding shoe:", error);
+      throw error;
+    });
+}

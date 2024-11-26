@@ -3,7 +3,7 @@ import Layout from "./components/layout/Layout";
 import Home from "./components/Home";
 import Shoes from "./components/shoes/Shoes";
 import AddShoe from "./components/addshoe/AddShoe";
-import ShoeDetails from "./components/ShoeDetails";
+import ShoeDetails from "./components/shoedetails/ShoeDetails";
 import Login from "./components/login/Login";
 import { useState } from "react";
 
@@ -41,7 +41,17 @@ export default function App() {
         },
         {
           path: "shoes/:shoeId",
-          element: <ShoeDetails />,
+          element: (
+            <ShoeDetails
+              user={user}
+              title={title}
+              setTitle={setTitle}
+              price={price}
+              setPrice={setPrice}
+              image={image}
+              setImage={setImage}
+            />
+          ),
         },
         {
           path: "login",

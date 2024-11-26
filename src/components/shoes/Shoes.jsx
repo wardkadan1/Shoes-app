@@ -25,9 +25,7 @@ export default function Shoes({ user }) {
   };
 
   const Move = (e) => {
-    console.log(e.target.name);
-
-    navigate(`/shoes/:${e.target.name}`);
+    navigate(`/shoes/${e.target.name}`);
   };
 
   return (
@@ -50,8 +48,10 @@ export default function Shoes({ user }) {
               </section>
             )}
             {user.type === "admin" && (
-              <section className="btnsec" onClick={Move}>
-                <button name={shoe.id}>View Details</button>
+              <section className="btnsec">
+                <button name={shoe.id} onClick={Move}>
+                  View Details
+                </button>
                 <button name={shoe.id} className="downBtn" onClick={Delete}>
                   Delete
                 </button>

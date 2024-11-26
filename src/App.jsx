@@ -24,7 +24,7 @@ export default function App() {
         },
         {
           path: "shoes",
-          element: <Shoes />,
+          element: <Shoes user={user} />,
         },
         {
           path: "shoes/add",

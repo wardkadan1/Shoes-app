@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getshoesbyid, updateShoe } from "../fetch/fetch";
 import "./shoedetails.css";
@@ -16,6 +16,7 @@ export default function ShoeDetails({
 }) {
   const { shoeId } = useParams();
   const [shoe, setShoe] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchShoe = async () => {
@@ -36,7 +37,7 @@ export default function ShoeDetails({
     e.preventDefault();
     try {
       await updateShoe(title, price, image, shoeId);
-      alert("Shoe updated successfully!");
+      navigate("/shoes");
     } catch (error) {
       console.error("Error fetching shoe by ID:", error);
     }

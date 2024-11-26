@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "./layout.css";
 
 export default function Layout({ user, setUser }) {
+  const navigate = useNavigate();
+
   const handleLogout = (e) => {
     e.preventDefault();
     setUser([]);
+    navigate("/");
   };
   return (
     <div className="page-container">
@@ -16,10 +19,7 @@ export default function Layout({ user, setUser }) {
             <Link to="/shoes/add"> | Add Shoe</Link>
           )}{" "}
           {(Object.keys(user).length > 0 && (
-            <Link to="/" onClick={handleLogout}>
-              {" "}
-              | Logout
-            </Link>
+            <Link onClick={handleLogout}> | Logout</Link>
           )) || <Link to="/login"> | Login</Link>}
         </nav>
       </header>
